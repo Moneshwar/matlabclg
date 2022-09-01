@@ -1,12 +1,12 @@
-x=input('Enter x :');
+X=input('Enter X :');
 N=input('Enter N:');
-L=length(x);
+L=length(X);
 if(L<N)
-    x=[x,zeros(1,N-L)];
+    X=[X,zeros(1,N-L)];
 end
 M=log2(N);
-x=bitrevorder(x);
-x=conj(x);
+X=bitrevorder(X);
+X=conj(X);
 k=0:N/2-1
 w=exp(-1i*2*pi*k/N);
 for a=1:M
@@ -14,13 +14,13 @@ for a=1:M
      W=w(1:N/m:N/2);
      for K=0:m:N-1
          for n=1:m/2
-             A=x(n+K);
-             B=x(n+K+m/2)*W(n);
-             x(n+K)=A+B;
-             x(n+K+m/2)=A-B;
+             A=X(n+K);
+             B=X(n+K+m/2)*W(n);
+             X(n+K)=A+B;
+             X(n+K+m/2)=A-B;
          end
      end
 end
-x=(1/N)*conj(x);
-display(x);
+X=(1/N)*conj(X);
+display(X);
       
