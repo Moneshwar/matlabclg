@@ -5,9 +5,9 @@ wc2=input('enter cut off frequency(wc2):');
 N=input('Enter N:');
 for n=-(N-1)/2 :(N-1)/2
    if(n==0)
-        hd(n+1+((N-1)/2))=(pi+wc1-wc2)/(pi);  
+        hd(n+1+((N-1)/2))=1+(wc1-wc2)/(pi);  
     else
-        hd(n+1+((N-1)/2))=((sin(n*wc1))-(sin(n*wc2)))/(n*pi);
+        hd(n+1+((N-1)/2))=(sin(n*wc1)-sin(n*wc2)+sin(n*pi))/(n*pi);
     end
 end
 %disp(hd);
@@ -74,4 +74,3 @@ stem(w,abs(H3));
 title('Hamming window H(Z) Stem');
         
         
-
