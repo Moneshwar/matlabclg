@@ -5,7 +5,7 @@ wc2=input('enter cut off frequency(wc2):');
 N=input('Enter N:');
 for n=-(N-1)/2 :(N-1)/2
    if(n==0)
-        hd(n+1+((N-1)/2))=(pi+wc2-wc1)/pi;  
+        hd(n+1+((N-1)/2))=(wc2-wc1)/pi;  
     else
         hd(n+1+((N-1)/2))=(sin(n*wc2)/(n*pi))-1*(sin(n*wc1)/(n*pi));
     end
@@ -72,6 +72,3 @@ title('Hanning window H(Z) Stem');
 subplot(4,3,12)
 stem(w,abs(H3));
 title('Hamming window H(Z) Stem');
-        
-        
-
